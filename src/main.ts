@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import ChatWidget from "./App.vue";
 import "./assets/style.css"; // 引入 Tailwind CSS
+const APP_VERSION = import.meta.env.VITE_APP_VERSION;
 
 // 初始化函數
 function initChatWidget(options = {}) {
@@ -8,6 +9,8 @@ function initChatWidget(options = {}) {
   if (!container) {
     container = document.createElement("div");
     container.id = "chat-widget-container";
+    container.dataset.version = APP_VERSION;
+    container.dataset.updated = BUILD_TIME;
     document.body.appendChild(container);
   }
 

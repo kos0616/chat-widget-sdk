@@ -15,3 +15,8 @@ import and use, for AI talking.
 | ---------- | ------------------ |
 | index.html | 本地端開發用       |
 | dev.html   | 本地端打包後測試用 |
+
+
+## TODO
+
+程式碼註記: 有嘗試在 rollup.js 使用 banner, intro，但只要是註記就會被刪除，因此先採用其他方法在物件的 DIV 上面加入 version 與 build time

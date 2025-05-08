@@ -3,6 +3,7 @@ import vue from "@vitejs/plugin-vue";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath, URL } from "node:url";
+// import packageJson from "./package.json"; // 引入 package.json
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -27,5 +28,6 @@ export default defineConfig({
   },
   define: {
     "process.env.NODE_ENV": JSON.stringify("production"), // 替換 process.env.NODE_ENV
+    BUILD_TIME: JSON.stringify(new Date().toISOString()),
   },
 });
