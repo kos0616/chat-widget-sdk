@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build && node open-dev.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && npm version patch && git tag v$(node -p \"require('./package.json').version\") && git push origin v$(node -p \"require('./package.json').version\")"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.5",
