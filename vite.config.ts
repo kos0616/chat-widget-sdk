@@ -6,6 +6,7 @@ import { fileURLToPath, URL } from "node:url";
 export default defineConfig({
   plugins: [vue()],
   build: {
+    outDir: "docs",
     lib: {
       // entry: path.resolve(__dirname, 'src/main.ts'),
       entry: fileURLToPath(new URL("src/main.ts", import.meta.url)),
