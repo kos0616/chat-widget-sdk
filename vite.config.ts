@@ -1,23 +1,31 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath, URL } from "node:url";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    cssInjectedByJsPlugin(), // 使用插件將 CSS 注入到 JS 中
+    tailwindcss(),
+  ],
   build: {
     outDir: "docs",
     lib: {
-      // entry: path.resolve(__dirname, 'src/main.ts'),
       entry: fileURLToPath(new URL("src/main.ts", import.meta.url)),
       name: "ChatWidget",
       fileName: (format) => `chat-widget.${format}.js`,
+      formats: ["umd"],
     },
     rollupOptions: {
-      external: ["vue"],
       output: {
         globals: { vue: "Vue" },
       },
     },
+  },
+  define: {
+    "process.env.NODE_ENV": JSON.stringify("production"), // 替換 process.env.NODE_ENV
   },
 });
