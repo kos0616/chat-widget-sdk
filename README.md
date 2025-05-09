@@ -7,15 +7,16 @@ import and use, for AI talking.
 ## Install
 
 ```
+這個CDN只會抓舊版，需要手動調整@lastest > @v0.0.x
 <script src="https://cdn.jsdelivr.net/gh/kos0616/chat-widget-sdk@latest/docs/chat-widget.umd.js"></script>
 
 ```
 
-| 檔案       | 用途               |
-| ---------- | ------------------ |
-| index.html | 本地端開發用       |
-| dev.html   | 本地端打包後測試用 |
-
+| 檔案        | 用途               |
+| ----------- | ------------------ |
+| index.html  | 本地端開發用       |
+| dev.html    | 本地端打包後測試用 |
+| deploy.html | CDN 測試用         |
 
 ## TODO
 
